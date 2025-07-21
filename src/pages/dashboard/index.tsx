@@ -1,8 +1,7 @@
-
 import { useState, useEffect} from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
-import Modal from "@/_components/modal"
+import TaskModal from "@/_components/modal";
 import { Dayjs } from 'dayjs';
 
 interface Task {
@@ -515,7 +514,7 @@ export default function Dashboard() {
                     </div>
                 </div>
             </div>
-            <Modal 
+            <TaskModal 
                 title={modalTitle} 
                 open={openModal} 
                 onCancel={handleModalClose}
@@ -526,5 +525,5 @@ export default function Dashboard() {
             />  
         </>
     )
-}   
+}
 

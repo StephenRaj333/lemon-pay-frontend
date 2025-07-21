@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {Modal ,Datepicker} from "antd"; 
+import { Modal, DatePicker } from "antd"; 
 
 import { Dayjs } from 'dayjs';
 import dayjs from 'dayjs';
