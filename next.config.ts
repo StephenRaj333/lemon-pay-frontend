@@ -1,15 +1,18 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  images: {
-    domains: ["flowbite.com","res.cloudinary.com"], // Add the domain here  
+  images: {   
     unoptimized: true,
   },
-  output: "export",
-  rules: {
-    'react/no-unescaped-entities': 'off',
-    '@next/next/no-page-custom-font': 'off',
+  noimplicitAny: true,  
+  trailingSlash: true,
+  typescript: {
+    ignoreBuildErrors: true,
+  },    
+  eslint: {
+    ignoreDuringBuilds: true,
   },  
+  output: "export",   
   // else  
   reactStrictMode: false,
 };

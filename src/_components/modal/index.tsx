@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Modal from "antd/es/modal";
-import DatePicker from "antd/es/date-picker";
+import {Modal ,Datepicker} from "antd"; 
+
 import { Dayjs } from 'dayjs';
 import dayjs from 'dayjs';
 

@@ -119,9 +119,9 @@ export default function Dashboard() {
     const fetchTasks = async () => {
         try {
             const token = getAuthToken();
-            const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/tasks`, {
+            const response = await axios.get(`https://lemon-pay-backend.vercel.app/tasks`, {
                 headers: {
-                    'Authorization': `Bearer ${token}`,
+                    'Authorization': `Bearer ${token}`, 
                     'Content-Type': 'application/json',
                 },  
             });
@@ -150,7 +150,7 @@ export default function Dashboard() {
                 new Date(values.date.format('YYYY-MM-DD')).toISOString().split('T')[0] : 
                 new Date().toISOString().split('T')[0];
             
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/tasks`, {
+            const response = await axios.post(`https://lemon-pay-backend.vercel.app/tasks`, {
                 taskName: values.taskName,
                 description: values.description,
                 dueDate: dueDate,
@@ -179,7 +179,7 @@ export default function Dashboard() {
                 new Date(values.date.format('YYYY-MM-DD')).toISOString().split('T')[0] : 
                 undefined;
                 
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/tasks/update/`, {
+            const response = await axios.post(`https://lemon-pay-backend.vercel.app/tasks/update/`, {
                 id: values.id,
                 taskName: values.taskName,
                 description: values.description,
@@ -206,7 +206,7 @@ export default function Dashboard() {
     const handleDeleteTask = async (taskId: string) => {
         try {
             const token = getAuthToken();
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/tasks/delete/`, {
+            const response = await axios.post(`https://lemon-pay-backend.vercel.app/tasks/delete/`, {
                 id: taskId,
             }, {
                 headers: {
